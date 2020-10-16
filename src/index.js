@@ -17,7 +17,7 @@ mongoose.connect(MONGO_URI,{
 });
 //MIDDLEWARES
 
-
+app.use(express.json());
 
 
 //RUTAS A NUESTROS SERVICIOS
