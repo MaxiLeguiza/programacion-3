@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
+const {Tarea}= require('../models/Tarea');
 
 //CRUD -> TAREAS
 //GET: listado de tareas - http://localhost:4000/api/tareas
 
-router.get('/api/tareas', (req , res) =>{
-    res.send([{nombre: "tareas 1s "},{nombre: "tareas 2s "}]);
+router.get('/api/tareas', async(req , res) =>{
+
+    const tareas = await Tarea.find();
+
+    res.send(tareas);
+
+ //   res.send([{nombre: "tareas 1s "},{nombre: "tareas 2s "}]);
 });
 
 //GET: una tarea determinada - http://localhost:4000/api/tareas/:id

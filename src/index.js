@@ -1,6 +1,7 @@
 //IMPORTS
 const express=require('express');
 const app = express();
+const mongoose = require('mongoose');
 
 const tareasRouters = require('./routers/tareasRouters');
 
@@ -8,6 +9,11 @@ const tareasRouters = require('./routers/tareasRouters');
 
 const PORT = 4000; 
 
+const MONGO_URI='mongosdb://localhost:27017/programacion3-2020';
+mongoose.connect(MONGO_URI,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 //MIDDLEWARES
 
 
