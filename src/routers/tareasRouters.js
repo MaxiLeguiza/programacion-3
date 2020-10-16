@@ -24,10 +24,10 @@ router.post('/api/tareas',async (req,res) =>{
 
     try{
 
-        const {nombre,descripcion,finalizada} =req.body;//cuerpo del mensaje
+        const {nombre, descripcion, finalizada} = req.body;//cuerpo del mensaje
     
-    const tarea = new Tarea({
-        nombre,
+        const tarea = new Tarea({
+        nombre : nombre,
         descripcion,
         finalizada
 
@@ -35,14 +35,14 @@ router.post('/api/tareas',async (req,res) =>{
         //nombre: nombre,
         //descripcion: descripcion,
         //finalizada: finalizada
-    });
+        });
 
-    let nuevaTarea =await tarea.save();
-    res.status(201).send(nuevaTarea);
-    }catch(error){
-        console.error(error);
-        res.status(500).send( {mensaje :'Error desconcido, Contactarse con soporte'});
-    }
+        let nuevaTarea =await tarea.save();
+        res.status(201).send(nuevaTarea);
+        }   catch(error){
+            console.error(error);
+            res.status(500).send( {mensaje :'Error desconcido, Contactarse con soporte'});
+        }
 });
 
 //POST: crear una tarea - http://localhost:4000/api/tareas -> en body el json del tarea
