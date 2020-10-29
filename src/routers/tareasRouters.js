@@ -10,8 +10,11 @@ const {Tarea}= require('../models/Tarea');
 
 router.get('/api/tareas', async(req , res) =>{
     const tareas = await Tarea.find();
-
     res.send(tareas);
+
+    //Ejemplo 
+
+    //res.send('mensaje 55');
 
  //   res.send([{nombre: "tareas 1s "},{nombre: "tareas 2s "}]);
 });
