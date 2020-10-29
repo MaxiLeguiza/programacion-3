@@ -9,7 +9,6 @@ const {Tarea}= require('../models/Tarea');
 //GET: listado de tareas - http://localhost:4000/api/tareas
 
 router.get('/api/tareas', async(req , res) =>{
-
     const tareas = await Tarea.find();
 
     res.send(tareas);
@@ -17,7 +16,7 @@ router.get('/api/tareas', async(req , res) =>{
  //   res.send([{nombre: "tareas 1s "},{nombre: "tareas 2s "}]);
 });
 //GET: buscar tareas por algun criterio -http://localhost:4000/api/tareas/consultar?criterio=tarea
-router.get('api/tareas/consultar', async (req, res)=> {
+router.get('/api/tareas/consultar', async (req, res)=> {
 
     try {
         
@@ -29,6 +28,7 @@ router.get('api/tareas/consultar', async (req, res)=> {
         ];
         const tareas = await Tarea.find({ '$or' : regExprSearch});
         res.send(tareas);
+        
     } catch (error) {
         console.error(error);
         res.status(500).send({mensaje: 'Error desconocido'});
