@@ -30,7 +30,7 @@ app.use(tareasRouters);
 
 //INICIAR APP
 
-app.listen(PORT, () => console.log('Iniciando app en puerto $(PORT)'));
+app.listen(PORT, () => console.log(`Iniciando app en puerto ${PORT}`));
 
 //mongodb - robo3t
 //postman
