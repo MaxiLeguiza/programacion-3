@@ -2,53 +2,59 @@ import React from 'react';
 
 const Store = React.createContext();
 
+
 const App = (props) => {
+
     const estadoInicial = {
-        productos: [{id:1, nombre: "Producto uno", precio: 33},
-                    {id:2, nombre: "Producto dos", precio: 66}],
-        prodSeleccionado : 2
+        productos: [{ id: 1, nombre: "Producto uno", precio: 33 },
+        { id: 2, nombre: "Producto dos", precio: 66 }],
+        prodSeleccionado: 2
     }
-    return(
-        <Store.Provider value = {estadoInicial}>
-                {props.children}
+
+    return (
+        <Store.Provider value={estadoInicial}>
+            {props.children}
         </Store.Provider>
     )
 }
 
 const ListaProductos = () => {
-    const ctx = React.createContext(Store);
-    const {productos} = ctx ;
-    return(
+    const ctx = React.useContext(Store);
+    const { productos } = ctx;
+    return (
         <div>
             <table>
                 <tr>
                     <th>Nombre</th>
                     <th>Precio</th>
                 </tr>
-                {productos.map( prod => {
-                    return(
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                    </tr>
+
+                {productos.map(prod => {
+                    return (
+                        <tr key={prod.id}>
+                            <td>{prod.nombre}</td>
+                            <td>{prod.precio}</td>
+                        </tr>
+
                     )
                 })}
-               
-map indefinido verificar prq no funcion video cliente servidor 21 -react context 4
+
+
             </table>
         </div>
     )
+
 }
 
 const MostrarProducto = () => {
-    return(
+    return (
         <div>
             Mostrar Productos
         </div>
     )
 }
 const Ejemplo6 = () => {
-    return(
+    return (
         <App>
             <ListaProductos />
             <MostrarProducto />
