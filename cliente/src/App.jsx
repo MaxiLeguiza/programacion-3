@@ -5,7 +5,8 @@ import React from 'react';
 //import Ejemplo3 from './components/ejemplo3/Ejemplo3';
 // import Ejemplo from './components/ejemplo4-comp/Ejemplo4';
 // import Ejemplo from './components/ejemplo5-context/Ejemplo5';
-import Ejemplo from './components/ejemplo5-context/Ejemplo6';
+//import Ejemplo from './components/ejemplo5-context/Ejemplo6';
+import Ejemplo from './components/ejemplo7-reducers/Ejemplo7';
 
 
 const App = () =>{
